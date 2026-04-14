@@ -3,7 +3,7 @@ import './login.css';
 function Login() {
   return (
     <div className="container">
-      <header className="header">
+      {/* <header className="header">
         <div className="header-left">
           <span className="title">
             알려줘 <span className="orange">홈즈</span>
@@ -15,7 +15,7 @@ function Login() {
           <button>로그인</button>
           <button>회원가입</button>
         </div>
-      </header>
+      </header> */}
 
       <div className="login-container">
         <div className="login-box">

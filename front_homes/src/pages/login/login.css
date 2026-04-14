@@ -9,7 +9,7 @@ body {
 }
 
 /* HEADER */
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +26,7 @@ body {
 
 .header-left img {
   width: 40px;
-}
+} */
 
 .title {
   font-weight: bold;
