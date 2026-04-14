@@ -1,51 +1,40 @@
-container: {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "100vh",
-  backgroundColor: "#f0f2f5",
-},
-header: {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  backgroundColor: "#1d4ed8",
-  padding: "16px 24px",
-  boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
-},
-headerText: {
-  color: "white",
-  margin: 0,
-  fontSize: "20px",
-},
-box: {
-  backgroundColor: "white",
-  padding: "40px",
-  borderRadius: "12px",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-  display: "flex",
-  flexDirection: "column",
-  gap: "16px",
-  width: "320px",
-},
-title: {
-  textAlign: "center",
-  marginBottom: "8px",
-},
-input: {
-  padding: "12px",
-  borderRadius: "8px",
-  border: "1px solid #ddd",
-  fontSize: "14px",
-  outline: "none",
-},
-button: {
-  padding: "12px",
-  backgroundColor: "#4f46e5",
-  color: "white",
-  border: "none",
-  borderRadius: "8px",
-  fontSize: "16px",
-  cursor: "pointer",
+import './login.css'; 
+
+function Login() {
+  return (
+    <div className="container">
+      <header className="header">
+        <div className="header-left">
+          <span className="title">
+            알려줘 <span className="orange">홈즈</span>
+          </span>
+        </div>
+
+        <div className="header-right">
+          <button>마이페이지</button>
+          <button>로그인</button>
+          <button>회원가입</button>
+        </div>
+      </header>
+
+      <div className="login-container">
+        <div className="login-box">
+          <input type="text" placeholder="전화번호 또는 이메일" />
+          <input type="password" placeholder="비밀번호" />
+
+          <button className="login-btn">로그인</button>
+
+          <div className="links">
+            <span>회원가입</span>
+            <span>|</span>
+            <span>비밀번호 재설정</span>
+            <span>|</span>
+            <span>계정찾기</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
+
+export default Login;
