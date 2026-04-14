@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.homes.mapper.UserMapper">
+
+    <!--회원가입-->
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="userId">
+        INSERT INTO user (email, password_hash, name, user_type)
+        VALUES (#{email}, #{passwordHash}, #{name}, #{userType})
+    </insert>
+
+    <!-- 이메일로 계정 조회-->
+    <select id="findByEmail" resultType="come.homes.domain.User">
+        SELECT *
+            FROM user WHERE email = #{email}
+            AND is_deleted = FALSE
+    </select>
+</mapper>
