@@ -1,0 +1,79 @@
+/* 전체 배경 설정 */
+.register-container {
+  min-height: 100vh;
+  background-color: #f8f9fa; /* 연한 회색 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+}
+
+
+.form-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
+  border: 1px solid #e9ecef;
+  width: 490px;
+  min-height: 825px;
+}
+
+/* 제목 '회원정보 입력' */
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+/* 입력창들 간격 */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 라벨 (이름, 비밀번호 등 글자) */
+.input-group label {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* 실제 입력 칸 스타일 */
+.input-group input {
+  width: 404px;
+  height: 46px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 15px;
+  box-sizing: border-box; /* 패딩 때문에 박스 커지는 것 방지 */
+}
+
+/* 파란색 회원가입 완료 버튼 */
+.submit-button {
+  margin-top: 10px;
+  background-color: #2151A2; /* 사진의 그 파란색 */
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #1a3f7a; /* 마우스 올렸을 때 살짝 어두워짐 */
+}
+
+/* 파일 첨부 아이콘 위치 조절 */
+.link-icon {
+  color: #adb5bd;
+  pointer-events: none;
+}

@@ -1,0 +1,431 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f5f6f8;
+}
+
+.page-wrap {
+  display: flex;
+  min-height: 911px;
+  background: #f5f6f8;
+}
+
+.sidebar {
+  width: 297px;
+  min-width: 297px;
+  height: 911px;
+  background: #fff;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+}
+
+.profile-area {
+  padding: 0 30px 22px;
+  border-bottom: 1px solid #eaecf0;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #4fa8d8;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 3px;
+}
+
+.profile-email {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 14px;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 28px;
+}
+
+.stat-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 1px;
+}
+
+.nav {
+  flex: 1;
+  padding-top: 18px;
+}
+
+.nav-group-title {
+  font-size: 11px;
+  color: #bbb;
+  font-weight: 600;
+  padding: 10px 30px 4px;
+}
+
+.nav-item {
+  display: block;
+  padding: 9px 30px;
+  font-size: 13.5px;
+  color: #555;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background: #f0f7fc;
+  color: #3d9fd4;
+}
+
+.nav-item.active {
+  border-left: 3px solid #3d9fd4;
+  color: #3d9fd4;
+  background: #f0f7fc;
+  font-weight: 600;
+}
+
+.nav-logout {
+  padding: 22px 30px 8px;
+  font-size: 13.5px;
+  color: #e05050;
+  cursor: pointer;
+}
+
+.nav-logout:hover {
+  text-decoration: underline;
+}
+
+.main {
+  flex: 1;
+  padding: 32px 32px 32px 36px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+.top-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+}
+
+.info-card {
+  width: 509px;
+  min-width: 509px;
+  height: 291px;
+  background: #fff;
+  border: 1.5px solid #bedcef;
+  border-radius: 10px;
+  padding: 20px 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.edit-btn {
+  font-size: 12px;
+  color: #3d9fd4;
+  border: 1px solid #3d9fd4;
+  border-radius: 5px;
+  padding: 3px 12px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.edit-btn:hover {
+  background: #f0f7fc;
+}
+
+.info-table {
+  flex: 1;
+  width: 100%;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #999;
+}
+
+.info-val {
+  color: #333;
+  font-weight: 500;
+}
+
+/* ← 여기가 수정된 부분 */
+.cert-card {
+  width: 509px;
+  min-width: 509px;
+  height: 291px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.cert-tabs {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cert-tab {
+  font-size: 11.5px;
+  color: #ccc;
+}
+
+.cert-tab.active {
+  color: #3d9fd4;
+  font-weight: 700;
+  border-bottom: 2px solid #3d9fd4;
+  padding-bottom: 2px;
+}
+
+.cert-address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.pin-icon {
+  font-size: 18px;
+  margin-top: 1px;
+}
+
+.cert-addr {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.cert-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.cert-status-label {
+  font-size: 13px;
+  color: #666;
+}
+
+.status-badge {
+  background: #d1f0dd;
+  color: #1a7a3f;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.write-btn {
+  background: #3d9fd4;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 18px;
+  cursor: pointer;
+}
+
+.write-btn:hover {
+  background: #2e8ec3;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.review-top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.review-place {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.review-addr {
+  font-size: 11.5px;
+  color: #3d9fd4;
+}
+
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 9px;
+  flex-wrap: wrap;
+}
+
+.stars {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.star-filled {
+  color: #f5a623;
+}
+
+.star-empty {
+  color: #ddd;
+}
+
+.meta-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.keywords {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.kw-tag {
+  background: #e7f3fb;
+  color: #2278a8;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.review-text {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.review-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  align-items: center;
+}
+
+.act-link {
+  font-size: 12px;
+  color: #999;
+  cursor: pointer;
+}
+
+.act-link:hover {
+  color: #3d9fd4;
+}
+
+.act-dot {
+  font-size: 12px;
+  color: #ddd;
+}
+
+.stamp {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 3px solid #3d9fd4;
+  color: #3d9fd4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.75);
+  opacity: 0.8;
+  pointer-events: none;
+}

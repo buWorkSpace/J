@@ -1,3 +1,8 @@
+/* 전체 박스 크기 계산 방식 고정 */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -8,45 +13,7 @@ body {
   width: 100%;
 }
 
-/* HEADER */
-/* .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: white;
-  border-bottom: 1px solid #ddd;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.header-left img {
-  width: 40px;
-} */
-
-.title {
-  font-weight: bold;
-  font-size: 20px;
-  color: #2f5aa8;
-}
-
-.orange {
-  color: #f28c28;
-}
-
-.header-right button {
-  margin-left: 10px;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  background: white;
-  cursor: pointer;
-}
-
-/* LOGIN */
+/* 로그인 화면 중앙 정렬 */
 .login-container {
   display: flex;
   justify-content: center;
@@ -54,41 +21,67 @@ body {
   height: calc(100vh - 70px);
 }
 
+/* 흰색 로그인 박스 */
 .login-box {
-  width: 400px;
-  padding: 40px;
+  width: 600px;
+  padding: 140px;
   background: white;
   border: 1px solid #ddd;
   text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.login-logo {
-  width: 200px;
-  margin-bottom: 20px;
+/* 로고 감싸는 영역 */
+.login-logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
 }
 
+/* 로고 이미지 스타일 (박스 크기에 맞춤) */
+.center-logo {
+  max-width: 100%;    /* 박스 너비를 절대 넘지 않음 */
+  width: 200px;       /* 로고 크기가 적당하도록 설정 (필요시 조절) */
+  height: auto;
+  display: block;
+}
+
+/* 입력창 스타일 */
 .login-box input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
 }
 
+/* 로그인 버튼 */
 .login-btn {
   width: 100%;
   padding: 12px;
   background: #2f5aa8;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
 }
 
+/* 하단 링크 */
 .links {
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 25px;
+  font-size: 13px;
   color: #888;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
+}
+
+.divider {
+  color: #eee;
 }

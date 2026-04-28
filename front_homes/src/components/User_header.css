@@ -1,15 +1,15 @@
 .header {
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #f0f0f0; /* 선을 조금 더 연하게 수정 */
 }
 
 .header_inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px 10px 60px;
   display: flex;
-  justify-content: space-between;  /* 왼쪽-오른쪽 분리 */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -22,18 +22,34 @@
   width: 150px;
   height: auto;
   display: block;
+  cursor: pointer;
 }
 
 .header_right {
   display: flex;
-  gap: 10px;
+  gap: 12px; /* 버튼 사이 간격 살짝 넓힘 */
 }
 
+
 .header_right button {
-  padding: 5px 13px;
-  border-radius: 4px;
-  border-color: #ddd;
+  padding: 8px 16px;       
+  border-radius: 8px;      
+  border: 1px solid #e0e0e0; 
   background-color: white;
+  color: #333;             
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s ease; 
   
+  /* 은은한 그림자 추가 (image_a22f04.png 느낌) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 마우스 올렸을 때 (Hover) 효과 */
+.header_right button:hover {
+  background-color: #f8f9fa;
+  border-color: #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px); /* 살짝 떠오르는 느낌 */
 }
