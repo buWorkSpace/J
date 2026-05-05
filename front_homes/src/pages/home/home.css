@@ -1,108 +1,188 @@
 .home {
-  width: 80%;
+  width: 95%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 32px 20px 40px;
-  box-sizing: border-box;
+  padding: 50px 0;
 }
 
-/* 건물 검색창 */
-.home_search_section {
-  margin: 20px auto;
+/* 상단 레이아웃 (검색창 왼쪽, 정렬 오른쪽) */
+.home_top_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 0 10px;
 }
 
+/* 검색창 스타일 */
 .home_search_bar {
-  width: 100%;
-  max-width: 650px;
-  height: 58px;
-  border: 1px solid #d9d9d9;
-  border-radius: 30px;
-  background-color: #fff;
+  width: 380px;
+  height: 52px;
+  border: 1px solid #e0e0e0;
+  border-radius: 26px;
   display: flex;
   align-items: center;
-  padding: 0 10px 0 20px;
-  box-sizing: border-box;
+  padding: 0 20px;
+  background: #fff;
 }
 
 .home_search_input {
-  flex: 1;
   border: none;
   outline: none;
-  font-size: 20px;
-  background: transparent;
+  font-size: 15px;
+  width: 100%;
+  margin-left: 10px;
 }
 
-.home_search_button {
+/* 정렬 박스 크기 확대 */
+.sort_container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background: #fff;
+  min-width: 160px; /* 너비 확대 */
+  height: 45px;     /* 검색창 높이와 통일 */
+  box-sizing: border-box;
+}
+
+.sort_label {
+  font-size: 17px;
+  font-weight: 700;
+  color: #333;
+  border-right: 1px solid #eee;
+  white-space: nowrap;
+
+}
+
+.sort_select {
   border: none;
-  background: transparent;
-  font-size: 22px;
+  outline: none;
+  padding-left: 15px;
+  font-size: 16px;
   cursor: pointer;
-  padding: 0 8px;
+  font-weight: 700;
+  color: #333;
+  background: transparent;
+  width: 100%;
 }
 
-/* ---------------------------------------------------- */
-/* <a> 태그 링크 스타일 - 이 부분이 사진 크기를 잡아줍니다 */
-/* ---------------------------------------------------- */
-.building_card_link {
-  text-decoration: none; /* 밑줄 제거 */
-  color: inherit;       /* 글자색 유지 */
-  display: block;        /* 중요! <a>를 상자로 만들어 너비를 갖게 함 */
-  width: 100%;           /* 그리드 칸에 맞게 꽉 채움 */
-}
-
-.building_card_link:hover .building_card_image {
-  opacity: 0.9;          /* 마우스 올렸을 때 살짝 투명하게 (선택) */
-  transition: 0.2s;
-}
-/* ---------------------------------------------------- */
-
-/* 하단 건물 리스트 */
-.home_building_section {
-  border: 1px solid #e5e5e5;
-  border-radius: 24px;
-  background-color: white;
-  padding: 32px 28px;
+/* 메인 리스트 외곽 박스 */
+.home_building_outer_box {
+  position: relative;
+  border: 1px solid #f0f0f0;
+  border-radius: 30px;
+  padding: 50px 60px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
 .home_building_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 36px 28px;
-  justify-items: center;
+  gap: 40px 30px;
 }
 
-.building_card {
+/* 텍스트 스타일: 밑줄 제거 및 검은색 고정 */
+.building_card_link {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+.building_card_link:hover {
+  text-decoration: none !important;
+}
+
+.building_card_name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000 !important;
+  display: block;
+}
+
+/* 슬라이드 버튼 스타일 (항상 존재) */
+.slide_btn {
+  position: absolute;
+  top: 40%;
+  width: 46px;
+  height: 46px;
+  background: #d1d1d1;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.slide_btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.prev_btn { left: -23px; }
+.next_btn { right: -23px; }
+
+/* 빈 공간 유지용 박스 */
+.building_card_empty {
+  width: 100%;
+  height: 240px;
+  visibility: hidden;
+}
+
+/* 카드 이미지 및 정보 */
+.image_wrapper {
+  position: relative;
   width: 100%;
 }
 
 .building_card_image {
   width: 100%;
-  height: 220px;
-  object-fit: cover;    
+  height: 240px;
+  object-fit: cover;
   border-radius: 20px;
-  display: block;
+}
+
+.heart_btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
 }
 
 .building_card_info {
-  margin-top: 14px;
+  margin-top: 15px;
   text-align: center;
 }
 
-.building_card_name {
-  font-size: 22px;
-  font-weight: 700;
-  color: #222;
-  margin-right: 6px;
+.star_icon { color: #ffcc00; margin-left: 5px; }
+
+/* 하단 숫자 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 35px;
 }
 
-.building_card_rating {
-  font-size: 18px;
-  color: #555;
+.page_num {
+  cursor: pointer;
+  font-size: 15px;
+  color: #bbb;
+  font-weight: 500;
 }
 
-.no_result {
-  grid-column: 1 / -1;
-  font-size: 18px;
-  color: #777;
-  text-align: center;
-  padding: 40px 0;
+.page_num.active {
+  color: #333;
+  font-weight: bold;
+  text-decoration: underline;
 }
