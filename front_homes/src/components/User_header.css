@@ -43,7 +43,7 @@
   transition: all 0.2s ease; 
   
   /* 은은한 그림자 추가 (image_a22f04.png 느낌) */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* 마우스 올렸을 때 (Hover) 효과 */

@@ -37,10 +37,11 @@ const RegisterPage = () => {
 
           {/* 파일 첨부 */}
           <div className="input-group">
-            <label>부동산 계약서 첨부</label>
+            <label>부동산 계약서 첨부<span className="link-icon">🔗</span></label>
+            
             <div className="file-input-wrapper">
               <input type="text" placeholder="파일 선택" readOnly />
-              <span className="link-icon">🔗</span>
+              
             </div>
           </div>
 

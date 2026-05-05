@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 /* 건물 검색창 */
 .home_search_section {
   margin: 20px auto;
@@ -40,7 +39,21 @@
   padding: 0 8px;
 }
 
+/* ---------------------------------------------------- */
+/* <a> 태그 링크 스타일 - 이 부분이 사진 크기를 잡아줍니다 */
+/* ---------------------------------------------------- */
+.building_card_link {
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit;       /* 글자색 유지 */
+  display: block;        /* 중요! <a>를 상자로 만들어 너비를 갖게 함 */
+  width: 100%;           /* 그리드 칸에 맞게 꽉 채움 */
+}
 
+.building_card_link:hover .building_card_image {
+  opacity: 0.9;          /* 마우스 올렸을 때 살짝 투명하게 (선택) */
+  transition: 0.2s;
+}
+/* ---------------------------------------------------- */
 
 /* 하단 건물 리스트 */
 .home_building_section {
