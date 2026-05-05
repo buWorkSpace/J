@@ -11,12 +11,13 @@
 
 .form-card {
   background-color: #ffffff;
-  padding: 40px;
+  padding: 50px;
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
   border: 1px solid #e9ecef;
-  width: 550px;
-  min-height: 825px;
+  width: 500px;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 /* 제목 '회원정보 입력' */

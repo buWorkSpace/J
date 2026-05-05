@@ -141,7 +141,7 @@ body {
 }
 
 .info-card {
-  width: 509px;
+  width: 100%;
   min-width: 509px;
   height: 291px;
   background: #fff;
@@ -206,9 +206,9 @@ body {
   font-weight: 500;
 }
 
-/* ← 여기가 수정된 부분 */
+
 .cert-card {
-  width: 509px;
+  width: 100%;
   min-width: 509px;
   height: 291px;
   background: #fff;

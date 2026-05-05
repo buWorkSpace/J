@@ -53,7 +53,8 @@
   color: #333;
   border-right: 1px solid #eee;
   white-space: nowrap;
-
+  padding: 10px;
+  padding-right: 30px;
 }
 
 .sort_select {
