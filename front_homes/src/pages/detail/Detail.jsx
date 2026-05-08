@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./Detail.css";
+import UserHeader from "../../components/User_header";
 
 function Detail() {
   const params = new URLSearchParams(window.location.search);
@@ -41,7 +42,11 @@ function Detail() {
   }, [buildingId]);
 
   return (
+    <div>
+      <UserHeader />
+    
     <main className="detail_container">
+      
       <section className="detail_left">
         <div className="location_section">
           <h3 className="section_title">위치정보</h3>
@@ -111,6 +116,7 @@ function Detail() {
         </div>
       </section>
     </main>
+    </div>
   );
 }
 

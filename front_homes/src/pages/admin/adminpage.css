@@ -1,0 +1,424 @@
+.admin-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fafafa;
+  color: #222;
+}
+
+.admin-title-section {
+  height: 70px;
+  padding: 10px 18px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: white;
+}
+
+.admin-title-section h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.admin-title-section p {
+  font-size: 12px;
+  color: #888;
+  margin: 4px 0 0;
+}
+
+.admin-layout {
+  display: flex;
+}
+
+.admin-sidebar {
+  width: 200px;
+  min-height: calc(100vh - 130px);
+  padding: 18px 20px;
+  border-right: 1px solid #e4e4e4;
+  background-color: white;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.admin-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1f58a8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.side-title {
+  font-size: 12px;
+  margin: 16px 0 8px;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar li {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 38px 60px;
+}
+
+.admin-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.admin-list-header h3 {
+  font-size: 18px;
+}
+
+.admin-list-header span {
+  margin-left: 8px;
+}
+
+.admin-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-filter button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.admin-filter button:hover {
+  font-weight: bold;
+  color: #1f58a8;
+}
+
+.admin-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #aaa;
+}
+
+.search-symbol {
+  font-size: 20px;
+  color: #777;
+  line-height: 1;
+}
+
+.admin-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 90px;
+  font-size: 14px;
+}
+
+.filter-active {
+  font-weight: bold;
+  color: #1f58a8 !important;
+}
+
+.contract-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.contract-table th {
+  font-size: 14px;
+  padding: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contract-table td {
+  font-size: 13px;
+  padding: 11px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.clickable-name {
+  cursor: pointer;
+}
+
+.clickable-name:hover {
+  color: #1f58a8;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.view-btn {
+  background: #1f58a8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.status-badge {
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.status-badge.approved {
+  background: #d7f0c8;
+  color: #31a324;
+}
+
+.status-badge.rejected {
+  background: #ffd6d6;
+  color: #ff4b4b;
+}
+
+.status-badge.waiting {
+  background: #ffe7a6;
+  color: #e0a100;
+}
+
+.empty-result {
+  height: 80px;
+  color: #999;
+  text-align: center;
+}
+
+/* 모달 */
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.contract-modal {
+   width: 40%;
+   min-height: auto;
+  background: white;
+  border-radius: 22px;
+  padding: 30px 40px;
+  position: relative;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+}
+
+.modal-close {
+  position: absolute;
+  right: 44px;
+  top: 34px;
+  border: none;
+  background: none;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  color: #000;
+}
+
+.contract-modal h2 {
+  margin: 0 0 52px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.modal-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+}
+
+.modal-form input {
+  width: 100%;
+  height: 36px;
+  margin-top: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 19px;
+  font-weight: 600;
+  color: #222;
+  outline: none;
+}
+
+.modal-form input::placeholder {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+}
+
+.modal-file-btn {
+  width: fit-content;
+  margin-top: 12px;
+  padding: 7px 13px;
+  border: none;
+  border-radius: 6px;
+  background: #4d75bd;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-status-btns {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.modal-status-btns button {
+  min-width: 82px;
+  height: 30px;
+  border-radius: 18px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-status-btns button::before {
+  content: "●";
+  margin-right: 7px;
+}
+
+.modal-status-btns button:nth-child(1) {
+  background: #ffe7a6;
+  color: #e0a100;
+}
+
+.modal-status-btns button:nth-child(2) {
+  background: #d7f0c8;
+  color: #31a324;
+}
+
+.modal-status-btns button:nth-child(3) {
+  background: #ffd6d6;
+  color: #ff4b4b;
+}
+
+.modal-status-btns button.active {
+  outline: 2px solid currentColor;
+}
+
+.disabled-input {
+  background: #e9eef8 !important;
+  color: #999 !important;
+  cursor: not-allowed;
+  border-radius: 6px !important;
+  height: 150px !important;
+  padding: 12px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+.reject-textarea {
+  width: 100%;
+  height: 150px;
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #e9eef8;
+  resize: none;
+  outline: none;
+  font-size: 13px;
+}
+
+.reject-textarea:disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+
+.modal-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 58px;
+  margin-top: 54px;
+}
+
+.confirm-btn,
+.cancel-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background: #1f58a8;
+  color: white;
+  border: none;
+}
+
+.cancel-btn {
+  background: white;
+  color: #111;
+  border: 1px solid #999;
+}
+
+/* 계약서 파일 미리보기 모달 */
+.file-modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.file-modal {
+  width: 700px;
+  height: 650px;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+}
+
+.file-modal-close {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.contract-preview {
+  width: 100%;
+  height: 560px;
+  border: 1px solid #ddd;
+  margin-top: 12px;
+}

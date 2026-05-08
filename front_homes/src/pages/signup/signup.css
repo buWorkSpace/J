@@ -10,12 +10,11 @@
 
 .form-card {
   background-color: #ffffff;
-  padding: 50px;
-  border-radius: 4px;
+  padding: 30px 40px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 은은한 그림자 */
   border: 1px solid #e9ecef;
   width: 500px;
-  margin-top: 5%;
   margin-bottom: 5%;
 }
 
@@ -24,8 +23,7 @@
   font-size: 28px;
   font-weight: 700;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #000;
 }
 
@@ -33,7 +31,7 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
 }
 
 /* 라벨 (이름, 비밀번호 등 글자) */
@@ -47,11 +45,11 @@
 /* 실제 입력 칸 스타일 */
 .input-group input {
   width: 100%; /* 부모 너비에 맞게 조정 (기존 404px에서 수정) */
-  height: 46px;
+  height: 40px;
   padding: 0 16px;
   background-color: #ffffff;
   border: 1px solid #ced4da;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 15px;
   box-sizing: border-box; 
 }
@@ -68,7 +66,7 @@
   color: white;
   padding: 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;

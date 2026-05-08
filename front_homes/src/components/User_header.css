@@ -1,13 +1,13 @@
 .header {
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid #f0f0f0; /* 선을 조금 더 연하게 수정 */
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .header_inner {
   width: 100%;
   margin: 0;
-  padding: 10px 20px 10px 60px;
+  padding: 10px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,29 +27,70 @@
 
 .header_right {
   display: flex;
-  gap: 12px; /* 버튼 사이 간격 살짝 넓힘 */
+  align-items: center;
+  gap: 12px;
 }
 
-
-.header_right button {
-  padding: 8px 16px;       
-  border-radius: 8px;      
-  border: 1px solid #e0e0e0; 
+/* 로그인/회원가입을 감싸는 하나의 박스 */
+.header_auth_group {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   background-color: white;
-  color: #333;             
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+/* 로그인/회원가입 버튼 */
+.header_login_button,
+.header_signup_button {
+  width: 95px;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: white;
+  color: #333;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease; 
-  
-  /* 은은한 그림자 추가 (image_a22f04.png 느낌) */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
 }
 
-/* 마우스 올렸을 때 (Hover) 효과 */
-.header_right button:hover {
+.header_login_button:hover,
+.header_signup_button:hover {
+  color: #1f58a8;
+  font-weight: 600;
+  background-color: #fafafa;
+}
+
+/* 가운데 구분선 */
+.divider {
+  width: 1px;
+  height: 16px;
+  background-color: #e0e0e0;
+}
+
+/* 로그인 후 마이페이지/관리자페이지/로그아웃 버튼 */
+.header_mypage_button,
+.header_logout_button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.header_mypage_button:hover,
+.header_logout_button:hover {
   background-color: #f8f9fa;
   border-color: #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform: translateY(-1px); /* 살짝 떠오르는 느낌 */
 }

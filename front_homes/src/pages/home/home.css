@@ -34,18 +34,17 @@
   margin-left: 10px;
 }
 
-/* ★ 정렬 박스 수정한 부분 ★ */
-.sort_container {
+.sort_label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  border-right: 1px solid #eee;
+  white-space: nowrap;
+  padding: 20px;
+
   display: flex;
   align-items: center;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  background: #fff;
-  /* 너비를 넉넉하게 고정해서 글자 길이에 따라 변하지 않게 함 */
-  width: 200px; 
-  height: 45px;
-  box-sizing: border-box;
-  overflow: hidden;
+  justify-content: center;
 }
 
 .sort_label {
@@ -54,12 +53,11 @@
   color: #333;
   border-right: 1px solid #eee;
   white-space: nowrap;
-  padding: 0 15px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  background: #fafafa; /* 라벨 부분에만 살짝 배경색을 줘서 구분감 업 */
+  padding: 10px;
+  padding-right: 30px;
+
 }
+
 
 .sort_select {
   border: none;
@@ -74,6 +72,7 @@
   text-align: center; /* 글자 가운데 정렬 */
   padding-right: 5px; /* 화살표 고려한 여백 */
 }
+
 
 /* 메인 리스트 외곽 박스 */
 .home_building_outer_box {
@@ -91,6 +90,8 @@
   gap: 40px 30px;
 }
 
+
+/* 텍스트 스타일: 밑줄 제거 및 검은색 고정 */
 .building_card_link {
   text-decoration: none !important;
   color: #000 !important;

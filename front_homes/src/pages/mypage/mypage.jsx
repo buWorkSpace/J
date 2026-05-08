@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './mypage.css';
+import UserHeader from "../../components/User_header";
 
 const user = {
   name: '김홈즈',
@@ -99,6 +100,9 @@ export default function MyPage() {
   };
 
   return (
+    <div>
+      <UserHeader />
+
     <div className="page-wrap">
       <aside className="sidebar">
         <div className="profile-area">
@@ -216,5 +220,7 @@ export default function MyPage() {
         ))}
       </main>
     </div>
+    
+  </div>
   );
 }

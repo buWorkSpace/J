@@ -1,5 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
+import UserHeader from "../../components/User_header";
 import './signup.css';
+import { useState, useRef } from "react";
 
 const RegisterPage = () => {
   // 1. 상태 및 참조 설정
@@ -21,7 +23,12 @@ const RegisterPage = () => {
   };
 
   return (
+    <div>      <UserHeader />
+    
     <div className="register-container">
+
+      {/* 부모인 register-container가 flex이므로, 
+          바로 아래 자식인 form-card가 화면 정중앙에 위치하게 됩니다. */}
       <div className="form-card">
         <h2 className="form-title">회원정보 입력</h2>
         
@@ -93,6 +100,7 @@ const RegisterPage = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
