@@ -10,8 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
-  padding: 0 10px;
+  margin-bottom: 30px;
+  gap: 20px;
 }
 
 /* 검색창 스타일 */
@@ -34,39 +34,45 @@
   margin-left: 10px;
 }
 
-/* 정렬 박스 크기 확대 */
+/* ★ 정렬 박스 수정한 부분 ★ */
 .sort_container {
   display: flex;
   align-items: center;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  padding: 5px 20px;
   background: #fff;
-  min-width: 160px; /* 너비 확대 */
-  height: 45px;     /* 검색창 높이와 통일 */
+  /* 너비를 넉넉하게 고정해서 글자 길이에 따라 변하지 않게 함 */
+  width: 200px; 
+  height: 45px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sort_label {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   color: #333;
   border-right: 1px solid #eee;
   white-space: nowrap;
-  padding: 10px;
-  padding-right: 30px;
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: #fafafa; /* 라벨 부분에만 살짝 배경색을 줘서 구분감 업 */
 }
 
 .sort_select {
   border: none;
   outline: none;
-  padding-left: 15px;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   font-weight: 700;
   color: #333;
   background: transparent;
-  width: 100%;
+  flex: 1; /* 남은 공간 차지 */
+  height: 100%;
+  text-align: center; /* 글자 가운데 정렬 */
+  padding-right: 5px; /* 화살표 고려한 여백 */
 }
 
 /* 메인 리스트 외곽 박스 */
@@ -85,14 +91,9 @@
   gap: 40px 30px;
 }
 
-/* 텍스트 스타일: 밑줄 제거 및 검은색 고정 */
 .building_card_link {
   text-decoration: none !important;
   color: #000 !important;
-}
-
-.building_card_link:hover {
-  text-decoration: none !important;
 }
 
 .building_card_name {
@@ -102,7 +103,7 @@
   display: block;
 }
 
-/* 슬라이드 버튼 스타일 (항상 존재) */
+/* 슬라이드 버튼 */
 .slide_btn {
   position: absolute;
   top: 40%;
@@ -120,22 +121,10 @@
   font-size: 20px;
 }
 
-.slide_btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
-
 .prev_btn { left: -23px; }
 .next_btn { right: -23px; }
 
-/* 빈 공간 유지용 박스 */
-.building_card_empty {
-  width: 100%;
-  height: 240px;
-  visibility: hidden;
-}
-
-/* 카드 이미지 및 정보 */
+/* 이미지 및 하트 스타일 */
 .image_wrapper {
   position: relative;
   width: 100%;
@@ -154,10 +143,25 @@
   right: 15px;
   background: none;
   border: none;
-  color: white;
-  font-size: 26px;
   cursor: pointer;
-  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.heart_btn svg {
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.4));
+  transition: all 0.2s ease;
+}
+
+.heart_btn:hover svg {
+  transform: scale(1.15);
+}
+
+.heart_btn.active svg {
+  filter: drop-shadow(0px 0px 2px rgba(222, 33, 33, 0.6));
 }
 
 .building_card_info {
@@ -167,7 +171,7 @@
 
 .star_icon { color: #ffcc00; margin-left: 5px; }
 
-/* 하단 숫자 페이지네이션 */
+/* 페이지네이션 */
 .pagination {
   display: flex;
   justify-content: center;
@@ -179,7 +183,6 @@
   cursor: pointer;
   font-size: 15px;
   color: #bbb;
-  font-weight: 500;
 }
 
 .page_num.active {

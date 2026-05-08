@@ -8,7 +8,6 @@
   font-family: 'Pretendard', sans-serif;
 }
 
-
 .form-card {
   background-color: #ffffff;
   padding: 50px;
@@ -47,20 +46,25 @@
 
 /* 실제 입력 칸 스타일 */
 .input-group input {
-  width: 404px;
+  width: 100%; /* 부모 너비에 맞게 조정 (기존 404px에서 수정) */
   height: 46px;
   padding: 0 16px;
   background-color: #ffffff;
   border: 1px solid #ced4da;
   border-radius: 4px;
   font-size: 15px;
-  box-sizing: border-box; /* 패딩 때문에 박스 커지는 것 방지 */
+  box-sizing: border-box; 
+}
+
+/* ★ 비밀번호 사이 간격 추가 ★ */
+.mb-xs {
+  margin-bottom: 12px !important; /* 아래 칸과의 간격을 12px 벌림 */
 }
 
 /* 파란색 회원가입 완료 버튼 */
 .submit-button {
   margin-top: 10px;
-  background-color: #2151A2; /* 사진의 그 파란색 */
+  background-color: #2151A2; 
   color: white;
   padding: 16px;
   border: none;
@@ -71,12 +75,22 @@
 }
 
 .submit-button:hover {
-  background-color: #1a3f7a; /* 마우스 올렸을 때 살짝 어두워짐 */
+  background-color: #1a3f7a;
 }
 
-/* 파일 첨부 아이콘 위치 조절 */
+/* 🔗 아이콘 버튼 스타일 */
 .link-icon {
-    margin-left: 10px;
-  color: #adb5bd;
-  pointer-events: none;
+  margin-left: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0;
+  vertical-align: middle;
+}
+
+/* 파일 입력 박스 스타일 (마이페이지 디자인과 통일) */
+.file-input-wrapper {
+  position: relative;
+  width: 100%;
 }

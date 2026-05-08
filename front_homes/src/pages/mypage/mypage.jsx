@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './mypage.css';
 
 const user = {
@@ -81,6 +81,23 @@ function ReviewCard({ review }) {
 }
 
 export default function MyPage() {
+  // 1. 인증 상태 관리용 상태값 (테스트를 위해 초기값을 '미등록'으로 설정)
+  const [userStatus, setUserStatus] = useState('미등록');
+  const fileInputRef = useRef(null);
+
+  // 2. 파일 업로드 버튼 핸들러
+  const handleUploadClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      alert(`${file.name} 업로드 완료!`);
+      setUserStatus('미승인'); // 업로드 시 '미승인(심사중)'으로 상태 변경 예시
+    }
+  };
+
   return (
     <div className="page-wrap">
       <aside className="sidebar">
@@ -148,22 +165,43 @@ export default function MyPage() {
             <div className="cert-top">
               <span className="card-title">거주지 인증</span>
               <div className="cert-tabs">
-                <span className="cert-tab">반려</span>
-                <span className="cert-tab active">승인</span>
-                <span className="cert-tab">미승인</span>
-                <span className="cert-tab">미등록</span>
+                <span className={`cert-tab ${userStatus === '반려' ? 'active' : ''}`}>반려</span>
+                <span className={`cert-tab ${userStatus === '승인' ? 'active' : ''}`}>승인</span>
+                <span className={`cert-tab ${userStatus === '미승인' ? 'active' : ''}`}>미승인</span>
+                <span className={`cert-tab ${userStatus === '미등록' ? 'active' : ''}`}>미등록</span>
               </div>
             </div>
             <div className="cert-address-row">
               <span className="pin-icon">📍</span>
               <div className="cert-addr">
-                충청남도 천안시 동남구 백석대학로 1<br />
-                202호· 원룸
+                {userStatus === '미등록' 
+                  ? '거주지 정보가 등록되지 않았습니다.' 
+                  : <>충청남도 천안시 동남구 백석대학로 1<br />202호· 원룸</>}
               </div>
             </div>
-            <div className="cert-status-row">
-              <span className="cert-status-label">인증상태</span>
-              <span className="status-badge">✔ 승인</span>
+            <div className="cert-status-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div>
+                <span className="cert-status-label">인증상태</span>
+                <span className="status-badge">
+                  {userStatus === '승인' ? '✔ 승인' : `● ${userStatus}`}
+                </span>
+              </div>
+
+              {/* 💡 핵심: 미등록 또는 반려 상태일 때만 재업로드 버튼 노출 */}
+              {(userStatus === '미등록' || userStatus === '반려') && (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <input 
+                    type="file" 
+                    ref={fileInputRef} 
+                    style={{ display: 'none' }} 
+                    onChange={handleFileChange}
+                    accept="image/*"
+                  />
+                  <button className="edit-btn" onClick={handleUploadClick}>
+                    재업로드 하기
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

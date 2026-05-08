@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './Home.css';
 
 function Home() {
-  // 샘플 데이터 (컴공 과제나 프로젝트 시 활용할 수 있는 예시 데이터입니다)
   const buildingList = [
     { id: 1, name: '해솔타운', rating: 4.5, reviewCount: 10, image: '/building1.jpg' },
     { id: 2, name: '청담빌라', rating: 3.5, reviewCount: 12, image: '/building2.jpg' },
@@ -18,21 +17,33 @@ function Home() {
   const [sortType, setSortType] = useState('기본순');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  const [favorites, setFavorites] = useState([]);
+
+  // 하트 클릭 핸들러
+  const toggleFavorite = (e, id) => {
+    e.preventDefault(); 
+    if (favorites.includes(id)) {
+      setFavorites(favorites.filter(favId => favId !== id));
+    } else {
+      setFavorites([...favorites, id]);
+    }
+  };
 
   // 검색 및 정렬 로직
   let filteredBuildings = buildingList.filter((b) => b.name.includes(searchKeyword));
-  if (sortType === '리뷰순') filteredBuildings.sort((a, b) => b.reviewCount - a.reviewCount);
-  else if (sortType === '별점순') filteredBuildings.sort((a, b) => b.rating - a.rating);
 
-  // 페이지네이션 계산
+  if (sortType === '리뷰순') {
+    filteredBuildings.sort((a, b) => b.reviewCount - a.reviewCount);
+  } else if (sortType === '별점순') {
+    filteredBuildings.sort((a, b) => b.rating - a.rating);
+  } else if (sortType === '관심목록순') {
+    filteredBuildings = filteredBuildings.filter(b => favorites.includes(b.id));
+  }
+
   const totalPages = Math.ceil(filteredBuildings.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  
-  // 현재 페이지 아이템 (최대 6개)
   const currentItems = filteredBuildings.slice(indexOfFirstItem, indexOfLastItem);
-  
-  // 6개 공간 고정을 위한 빈 슬롯 계산
   const emptySlots = Array.from({ length: Math.max(0, itemsPerPage - currentItems.length) });
 
   const handleSearch = () => {
@@ -42,7 +53,6 @@ function Home() {
 
   return (
     <main className="home">
-      {/* 상단 검색 및 정렬 박스 */}
       <section className="home_top_section">
         <div className="home_search_bar">
           <span className="search_icon">🔍</span>
@@ -58,17 +68,23 @@ function Home() {
 
         <div className="sort_container">
           <span className="sort_label">정렬</span>
-          <select className="sort_select" value={sortType} onChange={(e) => setSortType(e.target.value)}>
+          <select 
+            className="sort_select" 
+            value={sortType} 
+            onChange={(e) => {
+              setSortType(e.target.value);
+              setCurrentPage(1);
+            }}
+          >
             <option value="기본순">기본순</option>
             <option value="리뷰순">리뷰순</option>
             <option value="별점순">별점순</option>
+            <option value="관심목록순">관심목록순</option>
           </select>
         </div>
       </section>
 
-      {/* 메인 리스트 영역 */}
       <section className="home_building_outer_box">
-        {/* 슬라이드 버튼 (항상 표시) */}
         <button 
           className="slide_btn prev_btn" 
           onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
@@ -81,7 +97,23 @@ function Home() {
               <div className="building_card">
                 <div className="image_wrapper">
                   <img src={building.image} alt={building.name} className="building_card_image" />
-                  <button className="heart_btn" onClick={(e) => e.preventDefault()}>♡</button>
+                  
+                  {/* 하트 버튼 교체: 세련된 SVG 하트 모양 */}
+                  <button 
+                    className={`heart_btn ${favorites.includes(building.id) ? 'active' : ''}`} 
+                    onClick={(e) => toggleFavorite(e, building.id)}
+                  >
+                    <svg 
+                      width="24" 
+                      height="24" 
+                      viewBox="0 0 24 24" 
+                      fill={favorites.includes(building.id) ? "#e74c3c" : "none"} 
+                      stroke={favorites.includes(building.id) ? "#e74c3c" : "white"} 
+                      strokeWidth="2"
+                    >
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                  </button>
                 </div>
                 <div className="building_card_info">
                   <span className="building_card_name">{building.name}</span>
@@ -93,7 +125,6 @@ function Home() {
             </a>
           ))}
           
-          {/* 사진이 6개 미만일 때 빈 공간을 채워주는 박스 */}
           {emptySlots.map((_, index) => (
             <div key={`empty-${index}`} className="building_card_empty" />
           ))}
@@ -105,7 +136,6 @@ function Home() {
           disabled={currentPage === totalPages || totalPages === 0}
         >〉</button>
 
-        {/* 하단 숫자 페이지네이션 */}
         <div className="pagination">
           {Array.from({ length: totalPages || 1 }).map((_, i) => (
             <span 
