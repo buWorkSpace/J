@@ -8,6 +8,8 @@ import Detail from "./pages/detail/Detail.jsx";
 import Admin from "./pages/admin/adminpage.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import AdminPage from "./pages/admin/adminpage.jsx";
+import Review from "./pages/review/review.jsx";
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/admin" element={<AdminPage />} />
+       <Route path="/review" element={<Review />} />
         {/* --------------------------- */}
       </Routes>
     </BrowserRouter>

@@ -1,0 +1,148 @@
+/* 전체 배경 및 컨테이너 */
+.main-wrapper {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.review-container {
+  width: 1000px; /* 고정 너비 */
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+/* 공통 박스 스타일: 테두리 및 그림자 강화 */
+.box-item {
+  background-color: #fff;
+  border: 1.5px solid #dcdcdc; /* 테두리 확실히 보이게 */
+  border-radius: 8px;
+  margin-bottom: 25px; /* 박스 사이 간격 고정 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+/* 1. 상단 통계 섹션 */
+.stats-section {
+  display: flex;
+  height: 220px;
+  padding: 0 40px;
+  align-items: center;
+}
+
+.avg-rating-column {
+  width: 280px;
+  text-align: center;
+}
+
+.building-name { font-size: 16px; color: #444; display: block; margin-bottom: 10px; }
+.avg-value { font-size: 48px; font-weight: 800; display: block; }
+.static-stars { font-size: 24px; color: #ffc107; margin-top: 5px; }
+
+.count-info-column {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.gray-card {
+  background-color: #f1f3f5;
+  width: 180px;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #666;
+  line-height: 2.2;
+}
+
+.graph-column {
+  flex: 1;
+  padding-left: 40px;
+  border-left: 1px solid #eee;
+}
+
+.graph-row { display: flex; align-items: center; margin-bottom: 8px; font-size: 13px; color: #888; }
+.graph-label { width: 15px; }
+.bar-background { flex: 1; height: 8px; background: #eee; border-radius: 4px; margin: 0 15px; overflow: hidden; }
+.bar-fill { height: 100%; background: #9bb7d9; } /* 이미지의 부드러운 파란색 */
+
+/* 실제 데이터 비율 고정 */
+.fill-5, .fill-4 { width: 80px; }
+.fill-2 { width: 40px; }
+
+/* 2. 별점 & 키워드 박스 */
+.form-top-row {
+  display: flex;
+  height: 80px;
+}
+
+.star-input-group, .keyword-input-group {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.keyword-input-group {
+  border-left: 1.5px solid #dcdcdc;
+}
+
+.form-label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 25px;
+}
+
+.interactive-star-rating { display: flex; font-size: 38px; cursor: pointer; }
+.star-wrapper { position: relative; color: #e9ecef; margin-right: 2px; }
+.star-icon.active { color: #ffc107; }
+.star-half { position: absolute; left: 0; top: 0; width: 50%; overflow: hidden; color: #ffc107; }
+
+.actual-keyword-input {
+  border: none;
+  background: #f1f3f5;
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 250px;
+  font-size: 15px;
+  outline: none;
+}
+
+/* 3. 리뷰 본문 박스 (독립) */
+.form-textarea-group {
+  height: 400px;
+}
+
+.actual-textarea {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  border: none;
+  font-size: 18px;
+  resize: none;
+  outline: none;
+  border-radius: 8px;
+}
+
+/* 4. 하단 버튼 영역 */
+.form-action-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.camera-attach-btn {
+  background-color: #7a8bb9;
+  color: white; border: none; border-radius: 6px;
+  width: 65px; height: 45px; font-size: 24px; cursor: pointer;
+}
+
+.review-submit-btn {
+  background-color: #6d82b8;
+  color: white; border: none; border-radius: 6px;
+  padding: 0 40px; height: 45px; font-size: 18px; font-weight: bold; cursor: pointer;
+}
