@@ -12,13 +12,14 @@ public class User {
     private String email;
     private String passwordHash;
     private String name;
-    private String userType;
+    private String phone;
     private String role;
-    private String contractImageUrl;
     private String verifiedStatus;
     private LocalDateTime verifiedAt;
     private String rejectReason;
     private Boolean isDeleted;
     private LocalDateTime deletedAt;
     private LocalDateTime createdAt;
+    private String contractFile;
+
 }
